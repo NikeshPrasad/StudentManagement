@@ -28,7 +28,7 @@ public class Student {
 	@Column(name="Department", length=3)
 	private String department;
 	
-	@Column(name="Semester", length=3)
+	@Column(name="Semester", length=4)
 	private String semester;
 	
 	@Column(name="Section")
