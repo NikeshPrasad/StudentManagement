@@ -169,7 +169,7 @@ public class StudentController {
 		return mv;
 	}
 	
-	@RequestMapping(value="/modifyStudent")
+	@RequestMapping(value="/modifyStudent", method=RequestMethod.POST)
 	public void modifyStudent(@ModelAttribute("student") Student student, HttpServletRequest request, HttpServletResponse response) {
 		String message = null;
 		String messageColor = null;
