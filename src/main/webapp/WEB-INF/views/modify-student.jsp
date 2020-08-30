@@ -40,23 +40,23 @@
 				var state = form["state"].value;
 				var pinCode = form["pinCode"].value;
 				
-				var regexName = /[A-Za-z]/;
-				var regexAlphaOnly = /[A-Za-z ]/;
+				var regexName = /^[A-Za-z]+$/;
+				var regexAlphaOnly = /^[A-Za-z ]+$/;
 				
 				if (!regexName.test(firstName)) {
-					alert("First name should contain alphabets only");
+					alert("First name should contain alphabets only without any trailing and leading whitespaces");
 					return false;
 				}
 				if (!regexName.test(lastName)) {
-					alert("Last name should contain alphabets only");
+					alert("Last name should contain alphabets only  without any trailing and leading whitespaces");
 					return false;
 				}
 				if (!/^\d{10}$/.test(mobile)) {
 					alert("Enter your 10 digit mobile number");
 					return false;
 				}
-				if (!/[A-z0-9\/]/.test(anumber)) {
-					alert("Address can only contian alphabets, digits and /");
+				if (!/^[\w\/]+$/.test(anumber)) {
+					alert("Gate/House number can only contian alphabets, digits and /");
 					return false;
 				}
 				if (!regexAlphaOnly.test(street) || street==="") {

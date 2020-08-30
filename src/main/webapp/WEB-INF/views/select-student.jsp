@@ -85,6 +85,7 @@
 					<p style="color:red;"><b>${message }</b></p>
 				<% } %>
 			</div>
+			<a href="index.jsp">Return to homepage</a>
 		</div>
 	</body>
 </html>

@@ -28,23 +28,23 @@
 				var state = form["state"].value;
 				var pinCode = form["pinCode"].value;
 				
-				var regexName = /[A-Za-z]/;
-				var regexAlphaOnly = /[A-Za-z ]/;
+				var regexName = /^[A-Za-z]+$/;
+				var regexAlphaOnly = /^[A-Za-z ]+$/;
 				
 				if (!regexName.test(firstName)) {
-					alert("First name should contain alphabets only");
+					alert("First name should contain alphabets only without any trailing and leading whitespaces");
 					return false;
 				}
 				if (!regexName.test(lastName)) {
-					alert("Last name should contain alphabets only");
+					alert("Last name should contain alphabets only  without any trailing and leading whitespaces");
 					return false;
 				}
 				if (!/^\d{10}$/.test(mobile)) {
 					alert("Enter your 10 digit mobile number");
 					return false;
 				}
-				if (!/[A-z0-9\/]/.test(anumber)) {
-					alert("Address can only contian alphabets, digits and /");
+				if (!/^[\w\/]+$/.test(anumber)) {
+					alert("Gate/House number can only contian alphabets, digits and /");
 					return false;
 				}
 				if (!regexAlphaOnly.test(street) || street==="") {
@@ -69,7 +69,7 @@
 	</head>
 	<body>
 		<div id="addStudent" class="container">
-			<h2>Enter Student Details</h2>
+			<h2 style="margin:20px 0;">Enter Student Details</h2>
 			<sp:form id="studentForm" class="form-horizontal" onsubmit="return validateNewForm()" action="addStudent" method="post" modelAttribute="student">
 					<div class="form-group">
 						<sp:label path="firstName" class="control-label col-sm-2">First name:</sp:label>
